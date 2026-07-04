@@ -1,0 +1,66 @@
+<div class="elixir-panel-layout">
+
+    {{!-- TOP DASHBOARD --}}
+    <div class="elixir-dashboard">
+        <div class="elixir-list-header">
+            <span class="header-title">Experimental Elixirs</span>
+            <div class="header-metadata">
+                <span>Alchemist Level: <strong>{{alchemistLevel}}</strong></span>
+                <span>Free Daily Elixirs: <strong>{{freeElixirsCount}}</strong></span>
+            </div>
+        </div>
+        <div class="elixir-dashboard-body">
+            <p class="elixir-info-desc">
+                Touch an empty flask at the end of a long rest to create free elixirs. You can also expend a spell slot
+                of 1st level or higher to create one.
+            </p>
+            <div class="elixir-dashboard-controls">
+                <button type="button" class="roll-daily-btn" title="Roll your free daily elixirs" {{#if
+                    dailyRolled}}disabled{{/if}}>
+                    Roll Free Daily Elixirs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {{!-- SPELL SLOT CREATION LIST --}}
+    <div class="elixir-section-title">
+        Create Elixir with Spell Slot
+    </div>
+
+    {{#if hasSpellSlots}}
+    <div class="elixir-list">
+        <div class="elixir-list-subheader">
+            <span class="col-recipe">Elixir Effect</span>
+            <span class="col-controls">Configuration & Actions</span>
+        </div>
+        {{#each elixirRecipes}}
+        <div class="elixir-list-item">
+            <div class="item-main">
+                <img src="{{this.img}}" class="elixir-item-img" alt="" onerror="this.src='icons/svg/item-bag.svg'">
+                <div class="item-info">
+                    <span class="elixir-item-name">{{this.id}}. {{this.name}}</span>
+                    <span class="elixir-item-desc">{{this.description}}</span>
+                </div>
+            </div>
+            <div class="item-controls">
+                <select class="elixir-slot-select" data-recipe-id="{{this.id}}">
+                    {{#each ../spellSlots}}
+                    <option value="{{this.level}}">Slot Level {{this.level}} ({{this.value}} / {{this.max}})</option>
+                    {{/each}}
+                </select>
+                <button type="button" class="craft-elixir-btn" data-recipe-id="{{this.id}}">
+                    Create
+                </button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="elixir-empty-slots">
+        <i class="fas fa-exclamation-circle"></i>
+        <p>You do not have any available spell slots of 1st level or higher to create elixirs.</p>
+    </div>
+    {{/if}}
+
+</div>

@@ -1,0 +1,286 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   EXPERIMENTAL ELIXIRS MODULE STYLES
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.elixir-panel-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    width: 100%;
+    background: var(--dnd5e-background-card, var(--dnd5e-color-blue-gray-2, #252830));
+    color: var(--color-text-primary, #b5b3a4);
+    font-family: var(--font-primary, "Signika", sans-serif);
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Dashboard Panel */
+.elixir-dashboard {
+    display: flex;
+    flex-direction: column;
+    background: var(--dnd5e-color-card-background, rgba(0, 0, 0, 0.15));
+    border: 1px solid var(--color-border-dark-tertiary, rgba(255, 255, 255, 0.08));
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.elixir-list-header {
+    background: linear-gradient(180deg, var(--dnd5e-card-header-1, #491d25) 0%, var(--dnd5e-card-header-2, #311b1f) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 24px;
+}
+
+.elixir-list-header .header-title {
+    color: var(--color-text-title, var(--dnd5e-color-gold, #c4a77d));
+    font-weight: bold;
+    font-size: var(--font-size-14, 14px);
+    font-family: var(--dnd5e-font-heading, var(--font-serif, "Modesto Condensed", serif));
+    letter-spacing: 0.5px;
+}
+
+.elixir-list-header .header-metadata {
+    display: flex;
+    gap: 12px;
+    font-size: var(--font-size-11, 11px);
+    color: var(--color-text-primary, #b5b3a4);
+}
+
+.elixir-list-header .header-metadata strong {
+    color: var(--color-text-title, var(--dnd5e-color-gold, #c4a77d));
+}
+
+.elixir-dashboard-body {
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.elixir-info-desc {
+    margin: 0;
+    font-size: var(--font-size-11, 11px);
+    line-height: 1.35;
+    color: var(--color-text-secondary, #7a7971);
+    flex: 1;
+}
+
+.elixir-dashboard-controls {
+    flex-shrink: 0;
+}
+
+/* Roll Button */
+.roll-daily-btn {
+    height: 26px;
+    padding: 0 12px;
+    border-radius: 3px !important;
+    background: linear-gradient(180deg, var(--dnd5e-card-header-1, #491d25) 0%, var(--dnd5e-card-header-2, #311b1f) 100%);
+    border: 1px solid var(--dnd5e-card-header-1, #491d25);
+    color: var(--color-text-emphatic, var(--color-text-light-0, #fff));
+    font-weight: bold;
+    font-size: var(--font-size-11, 11px);
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.roll-daily-btn:hover:not(:disabled) {
+    background: linear-gradient(180deg, var(--dnd5e-card-header-2, #311b1f) 0%, var(--dnd5e-card-header-1, #491d25) 100%);
+    box-shadow: 0 0 6px rgba(73, 29, 37, 0.5);
+}
+
+.roll-daily-btn:disabled,
+.roll-daily-btn.already-rolled {
+    background: var(--dnd5e-card-header-disabled-1, #444) !important;
+    border-color: var(--dnd5e-card-header-disabled-2, #333) !important;
+    color: var(--color-text-inactive, #666) !important;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+/* Section Title */
+.elixir-section-title {
+    font-size: var(--font-size-14, 14px);
+    font-family: var(--dnd5e-font-heading, var(--font-serif, "Modesto Condensed", serif));
+    font-weight: bold;
+    color: var(--color-text-title, var(--dnd5e-color-gold, #c4a77d));
+    padding: 4px 4px;
+    margin: 12px 0 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Elixir List */
+.elixir-list {
+    display: flex;
+    flex-direction: column;
+    background: var(--dnd5e-color-card-background, rgba(0, 0, 0, 0.15));
+    border: 1px solid var(--color-border-dark-tertiary, rgba(255, 255, 255, 0.08));
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.elixir-list-subheader {
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--color-border-dark-tertiary, rgba(255, 255, 255, 0.08));
+    padding: 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-10, 10px);
+    font-weight: bold;
+    color: var(--color-text-secondary, #7a7971);
+    letter-spacing: 0.5px;
+}
+
+.elixir-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--color-border-dark-tertiary, rgba(255, 255, 255, 0.06));
+    gap: 12px;
+}
+
+.elixir-list-item:last-child {
+    border-bottom: none;
+}
+
+.elixir-list-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.item-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.elixir-item-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border: 1px solid var(--color-border-dark, #3b3a32);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.elixir-item-name {
+    font-weight: bold;
+    color: var(--color-text-emphatic, var(--color-text-light-0, #fff));
+    font-size: var(--font-size-12, 12px);
+}
+
+.elixir-item-desc {
+    font-size: var(--font-size-11, 11px);
+    color: var(--color-text-secondary, #7a7971);
+    line-height: 1.3;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.elixir-slot-select {
+    height: 22px !important;
+    padding: 0 24px 0 6px !important;
+    font-size: var(--font-size-11, 11px) !important;
+    border-radius: 3px !important;
+    border: 1px solid var(--dnd5e-card-header-1, #491d25) !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    color: var(--color-text-primary, #b5b3a4) !important;
+    min-height: 0 !important;
+    line-height: normal !important;
+}
+
+.craft-elixir-btn {
+    height: 22px;
+    padding: 0 10px;
+    border-radius: 3px !important;
+    background: linear-gradient(180deg, var(--dnd5e-card-header-1, #491d25) 0%, var(--dnd5e-card-header-2, #311b1f) 100%);
+    border: 1px solid var(--dnd5e-card-header-1, #491d25);
+    color: var(--color-text-emphatic, var(--color-text-light-0, #fff));
+    font-weight: bold;
+    font-size: var(--font-size-11, 11px);
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.15s;
+}
+
+.craft-elixir-btn:hover {
+    background: linear-gradient(180deg, var(--dnd5e-card-header-2, #311b1f) 0%, var(--dnd5e-card-header-1, #491d25) 100%);
+    box-shadow: 0 0 4px rgba(73, 29, 37, 0.5);
+}
+
+.elixir-empty-slots {
+    text-align: center;
+    padding: 20px;
+    background: var(--dnd5e-color-card-background, rgba(0, 0, 0, 0.05));
+    border-radius: 4px;
+    border: 1px solid rgba(255, 68, 68, 0.15);
+    color: #e08080;
+    font-style: italic;
+    font-size: var(--font-size-11, 11px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.elixir-empty-slots p {
+    margin: 0;
+}
+
+/* Tab Active height adjustments */
+.artificer-artificer-elixir-tab.active,
+.experimental-elixirs-tab.active {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure button casings are determined by template text (overriding default Foundry styles) */
+.elixir-panel-layout button {
+    text-transform: none;
+}
+
+/* Adjust tab container layout inside character sheets when running independently */
+div.tab.artificer-artificer-elixir-tab {
+    height: 100% !important;
+    min-height: 550px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
