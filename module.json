@@ -2,7 +2,7 @@
   "id": "artificer-elixir",
   "title": "Artificer Foundry - Experimental Elixir Generator",
   "description": "Character sheet integration for Alchemist Artificers to roll daily random elixirs (scaling with level) and create custom elixirs by expending spell slots.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": {
     "minimum": "12",
     "verified": "14"
