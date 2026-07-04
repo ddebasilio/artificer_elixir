@@ -12,9 +12,18 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Update manifest urls
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('module.json', 'utf8'));
+            manifest.download = \`https://github.com/ddebasilio/artificer_elixir/releases/download/\${{ github.ref_name }}/artificer-elixir-\${{ github.ref_name }}.zip\`;
+            fs.writeFileSync('module.json', JSON.stringify(manifest, null, 2), 'utf8');
+          "
+
       - name: Build Zip
         run: |
-          zip -r artificer-elixir.zip . -x "*.git*" "*.github*" "*.DS_Store" "screenshot.png" "*.zip"
+          zip -r artificer-elixir-${{ github.ref_name }}.zip . -x "*.git*" "*.github*" "*.DS_Store" "screenshot.png" "*.zip"
 
       - name: Create Release
         id: create_release
@@ -22,10 +31,11 @@ jobs:
         with:
           files: |
             module.json
-            artificer-elixir.zip
+            artificer-elixir-${{ github.ref_name }}.zip
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
