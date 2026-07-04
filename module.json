@@ -13,8 +13,8 @@
     }
   ],
   "url": "https://github.com/ddebasilio/artificer_elixir",
-  "manifest": "https://github.com/ddebasilio/artificer_elixir/releases/latest/download/module.json",
-  "download": "https://github.com/ddebasilio/artificer_elixir/releases/download/v1.0.2/artificer-elixir-v1.0.2.zip",
+  "manifest": "https://raw.githubusercontent.com/ddebasilio/artificer_elixir/refs/heads/main/module.json",
+  "download": "https://github.com/ddebasilio/artificer_elixir/archive/refs/heads/main.zip",
   "esmodules": [
     "scripts/main.js"
   ],
