@@ -10,18 +10,17 @@ This module provides character sheet integration for Alchemist Artificers in Fou
 
 * **Dedicated Sheet Tab**: Adds an "Experimental Elixirs" tab to characters identified as Alchemist Artificers.
 * **Automatic Scaling**: Dynamically scales daily free elixirs and elixir descriptions based on your Artificer level.
-* **Free Daily Rolls**: Post roll requests to chat at the end of a long rest. Handles random d6 table rolling, choice outcomes (rolling a 6), and item additions automatically.
+* **Free Daily Rolls**: Handles random d6 table rolling, choice outcomes (rolling a 6), and item additions automatically.
 * **Spell Slot Crafting**: Expend available spell slots of 1st level or higher to create specific elixirs directly from the sheet.
 * **Active Effect Automation**: Consuming (drinking) an elixir automatically applies its respective Active Effect (e.g., Speed increase, AC bonus, 1d4 bonus to attacks and saves) to the character.
-* **Long Rest Reset**: Resets daily roll status and removes remaining daily elixirs at the end of a long rest.
-* **Chat Command**: Use the `/elixir` command in the chat box to quickly open or trigger your daily elixir roll process.
+
 
 ## Installation
 
 To install the module, copy the manifest link below and paste it into the Manifest URL field in the Foundry VTT Setup menu under Add-On Modules:
 
 ```
-https://github.com/ddebasilio/artificer_elixir/releases/latest/download/module.json
+https://raw.githubusercontent.com/ddebasilio/artificer_elixir/refs/heads/main/module.json
 ```
 
 ## Compatibility
