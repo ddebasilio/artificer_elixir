@@ -278,9 +278,13 @@
 div.tab.artificer-artificer-elixir-tab {
     height: 100% !important;
     min-height: 550px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    display: none !important;
     padding: 0 !important;
     margin: 0 !important;
     overflow: hidden !important;
+}
+
+div.tab.artificer-artificer-elixir-tab.active {
+    display: flex !important;
+    flex-direction: column !important;
 }
